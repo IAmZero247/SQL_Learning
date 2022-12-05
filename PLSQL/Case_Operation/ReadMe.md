@@ -3,7 +3,7 @@
 ## Case Expresion And Case Statement
 
 
-## Case Expression
+1. ## Case Expression
 
 1. Syntax 
 ```
@@ -52,5 +52,5 @@ END;
  
 ```
 
-## Case Statement
+2. ## Case Statement
 
