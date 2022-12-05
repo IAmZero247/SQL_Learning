@@ -8,9 +8,9 @@
 	1. Syntax 
 	```
 	somevar := CASE [expression | condition]
-		WHEN condition1 return result1
-		WHEN condition2 return result2
-		WHEN condition3 return result3
+		WHEN condition1 THEN result1
+		WHEN condition2 THEN result2
+		WHEN condition3 THEN result3
 		.............
 		.............
 		ELSE resultdft
@@ -53,4 +53,51 @@
     ```
 
 2. ## Case Statement
+
+1. Syntax 
+	```
+	CASE 
+		WHEN condition-a THEN 
+		     statementa1;
+			 statementa2;
+			 statementa3;
+			 ...
+		WHEN condition-b THEN 
+		     statementb1;
+			 statementb2;
+			 statementb3;
+			 ...
+		WHEN condition-c THEN 
+		     statementc1;
+			 ...
+		.............
+		.............
+		ELSE 
+		statement-def1;
+		statement-def2;
+		statement-def3;
+		...
+	END CASE;	
+		
+	``` 
+ 2. Example 
+	```
+	DECLARE
+	  v_job_code        VARCHAR2(10) := 'IT_PROG';
+	  v_department      VARCHAR2(10) := 'IT';
+	  v_salary_increase NUMBER;
+	BEGIN
+	  CASE
+		WHEN v_job_code = 'SA_MAN' THEN
+		  v_salary_increase := 0.2;
+		  dbms_output.put_line('The salary increase for a Sales Manager is: '|| v_salary_increase);
+		WHEN v_department = 'IT' AND v_job_code = 'IT_PROG' THEN
+		  v_salary_increase := 0.2;
+		  dbms_output.put_line('The salary increase for a Sales Manager is: '|| v_salary_increase);
+		ELSE
+		  v_salary_increase := 0;
+		  dbms_output.put_line('The salary increase for this job code is: '|| v_salary_increase);
+	  END CASE;
+	END;
+	```
 
