@@ -1,0 +1,71 @@
+
+01) Hello World Variables;
+**************************
+SET SERVEROUTPUT ON;
+
+-----------------------===================-----------------------
+-----------------------DECLARING VARIABLES-----------------------
+-----------------------===================-----------------------
+
+DECLARE
+v_text VARCHAR(20) NOT NULL DEFAULT 'PL/SQL text variable';
+v_char CHAR(11) NOT NULL  DEFAULT 'TEXT_SAMPLE';
+v_num1  NUMBER(5,2)  NOT NULL  DEFAULT 321.335577;
+v_num2  NUMBER(5)  := 321.335577;
+v_num3  NUMBER  := 321.335577;
+v_binInt BINARY_INTEGER NOT NULL  DEFAULT 20.55;
+v_plsInt PLS_INTEGER NOT NULL DEFAULT 40.55;
+v_binFlt BINARY_FLOAT NOT NULL  DEFAULT 50.5577f;
+v_binDub BINARY_DOUBLE NOT NULL  DEFAULT 60.5577d;
+v_date1 DATE NOT NULL DEFAULT SYSDATE;
+v_date2 DATE := '18-DEC-1988 10:10:25';
+v_timstp1 TIMESTAMP(3) NOT NULL DEFAULT SYSTIMESTAMP;
+v_timstp2 TIMESTAMP(4) WITH TIME ZONE := SYSTIMESTAMP;
+v_timstp3 TIMESTAMP(4) WITH TIME ZONE :='22-OCT-31 8:00:00 AM -8:00';
+v_timstp4 TIMESTAMP(4) WITH TIME ZONE :='22-OCT-31 8:00:00 AM US/Pacific';
+v_timstp5 TIMESTAMP(4) WITH TIME ZONE :='22-NOV-31 1:30:00 AM US/Pacific ';
+v_timstp6 TIMESTAMP(5) WITH LOCAL TIME ZONE  := SYSTIMESTAMP;
+v_interval1 INTERVAL DAY(3) TO SECOND (6) := '100 10:10:10.100 '; --100 days 10 hr 10 min 10 sec ...
+v_interval2 INTERVAL YEAR(2) TO MONTH := '2-10';  -- 2 year 10 month
+v_interval3 INTERVAL DAY(3) TO SECOND (6) := '10 10:10:10.100 ';
+v_date_pl_or_mi_interval DATE := v_date2+v_interval1;
+v_timestamp_pl_or_mi_interval TIMESTAMP(4) := v_timstp2+v_interval1;
+v_interval_pl_or_mi_interval INTERVAL DAY(3) TO SECOND (6) := v_interval1+v_interval3;
+BEGIN 
+DBMS_OUTPUT.PUT_LINE('VARCHAR sample : ' || v_text);
+DBMS_OUTPUT.PUT_LINE('CHAR sample : ' || v_char);
+DBMS_OUTPUT.PUT_LINE( 'NUMBER sample : ' || v_num1);
+DBMS_OUTPUT.PUT_LINE('NUMBER sample : ' || v_num2);
+DBMS_OUTPUT.PUT_LINE('NUMBER sample : ' || v_num3);
+DBMS_OUTPUT.PUT_LINE('BINARY_INTEGER sample : ' || v_binInt);
+DBMS_OUTPUT.PUT_LINE('PLS_INTEGER sample : ' || v_plsInt);
+DBMS_OUTPUT.PUT_LINE('BINARY_FLOAT sample : ' || v_binFlt);
+DBMS_OUTPUT.PUT_LINE('BINARY_DOUBLE sample : ' || v_binDub);
+DBMS_OUTPUT.PUT_LINE('DATE sample : ' || v_date1);
+DBMS_OUTPUT.PUT_LINE('DATE sample : ' || v_date2);
+DBMS_OUTPUT.PUT_LINE('TIMESTAMP sample : ' || v_timstp1);
+DBMS_OUTPUT.PUT_LINE('TIMESTAMP WITH TIME ZONE sample : ' || v_timstp2);
+DBMS_OUTPUT.PUT_LINE('TIMESTAMP WITH TIME ZONE sample : ' || v_timstp2);
+DBMS_OUTPUT.PUT_LINE('TIMESTAMP WITH TIME ZONE sample : ' || v_timstp3);
+DBMS_OUTPUT.PUT_LINE('TIMESTAMP WITH TIME ZONE sample : ' || v_timstp4);
+DBMS_OUTPUT.PUT_LINE('TIMESTAMP WITH TIME ZONE sample : ' || v_timstp5);
+DBMS_OUTPUT.PUT_LINE('TIMESTAMP WITH LOCAL TIME ZONE sample : ' || v_timstp6);
+DBMS_OUTPUT.PUT_LINE('INTERVAL DAY TO SECOND sample : ' || v_interval1);
+DBMS_OUTPUT.PUT_LINE('INTERVAL YEAR TO MONTH sample : ' || v_interval2);
+
+DBMS_OUTPUT.PUT_LINE('v_date_pl_or_mi_interval :' || v_date_pl_or_mi_interval);
+DBMS_OUTPUT.PUT_LINE('v_timestamp_pl_or_mi_interval :' || v_timestamp_pl_or_mi_interval);
+DBMS_OUTPUT.PUT_LINE('v_interval_pl_or_mi_interval :' || v_interval_pl_or_mi_interval);
+END;
+
+----------------==================================---------------
+----------------USING BOOLEAN DATA TYPE in PL/SQL----------------
+----------------==================================---------------
+DECLARE
+    v_booleanTrue BOOLEAN := TRUE;
+	v_booleanFalse BOOLEAN := FALSE;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(sys.diutil.bool_to_int(v_booleanTrue));
+	DBMS_OUTPUT.PUT_LINE(sys.diutil.bool_to_int(v_booleanFalse));
+END;
+----------------==================================---------------
