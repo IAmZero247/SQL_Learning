@@ -1,6 +1,6 @@
 # Case Operations
 
-## Case Expresion And Case Statement
+## Case Expression And Case Statement
 
 
 1. ## Case Expression
@@ -41,7 +41,7 @@
 	  v_department      VARCHAR2(10) := 'IT';
 	  v_salary_increase NUMBER;
 	BEGIN
-	  v_salary_increase:=CASE
+	  v_salary_increase:=  CASE
 						  WHEN v_job_code   = 'SA_MAN' THEN 0.2
 						  WHEN v_department = 'IT' AND v_job_code = 'IT_PROG' THEN 0.3
 						 ELSE 0
