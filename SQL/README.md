@@ -1,0 +1,58 @@
+# SQL Constraints
+------------
+
+
+1. Constraints are set of rules / business rules which will be defined at DDL statements.
+
+2. Constraints enforce the database to allow only valid values into the Database tables.
+
+3. Constraints ensure the user to fetch only valid/accurate data from the Database tables.
+
+4. We can apply the Constraints at two levels
+
+   1. Column level constraints
+   ===========================
+     Applying the constraints after defining the column immediately then those constraints are called as 
+     "Column level constraints"
+
+   2. Table level constraints
+   ===========================
+     Applying the constraints after defining all the columns in the table (or) at the end of the table are called as 
+     "Table level constraints".
+
+
+### Basically Oracle constraints are broadly divided into six types
+------------
+   1) Unique
+
+   2) not null
+
+   3) check
+
+   4) default
+
+   5) primary key
+  
+   6) foreign key (or) Referential Integrity
+## LeetCode 
+-----------
+
+| Question                | Answer                 |
+|-------------------------|------------------------:|
+| <a href="https://leetcode.com/problems/employees-earning-more-than-their-managers/description/">Employees earn more than their managers</a> | <a href="https://github.com/mdh266/SQL-Practice/blob/master/leetcode/employees_managers.sql">Solution</a> |
+| <a href="https://leetcode.com/problems/second-highest-salary/description/">Second highest salaries</a> | <a href="https://github.com/mdh266/SQL-Practice/blob/master/leetcode/SecondHighestSalary.sql">Solution</a> |
+| <a href="https://leetcode.com/problems/customers-who-never-order/">Customers who never order</a> | <a href="https://github.com/mdh266/SQL-Practice/blob/master/leetcode/CustomersDontOrder.sql">Solution</a> | 
+| <a href="https://leetcode.com/problems/duplicate-emails/description/">Duplicate Emails</a> | <a href="https://github.com/mdh266/SQL-Practice/blob/master/leetcode/DuplicateEmails.sql">Solution</a> |
+|[Rising Temperatures](https://leetcode.com/problems/rising-temperature) | [Solution](https://github.com/mdh266/SQL-Practice/blob/master/leetcode/RisingTemperatures.sql) |
+|[Department Top Three Salaries](https://leetcode.com/problems/department-top-three-salaries/submissions/) | [Solution](https://github.com/mdh266/SQL-Practice/blob/master/leetcode/Top3DeptSalaries.sql) |
+|[N-th Highest Salary](https://leetcode.com/problems/nth-highest-salary/) | [Solution](https://github.com/mdh266/SQL-Practice/blob/master/leetcode/NthHighestSalary.sql)|
+|[Department Highest Salary](https://leetcode.com/problems/department-highest-salary/) | [Solution](https://github.com/mdh266/SQL-Practice/blob/master/leetcode/DeptHighestSalary.sql) |
+| [Rank Scores](https://leetcode.com/problems/rank-scores/) | [Solution](https://github.com/mdh266/SQL-Practice/blob/master/leetcode/RankScores.sql) |
+| [Not Boring Movies](https://leetcode.com/problems/not-boring-movies/) | [Solution](https://github.com/mdh266/SQL-Practice/blob/master/leetcode/notboringmovies.sql)|
+| [Exchange Seats](https://leetcode.com/problems/exchange-seats/) | [Solution](https://github.com/mdh266/SQL-Practice/blob/master/leetcode/exchange-seats.sql)|
+| [Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/) | [Solution](https://github.com/mdh266/SQL-Practice/blob/master/leetcode/ConsecutiveNumbers.sql)|
+| [Human Traffice Of Stadium](https://leetcode.com/problems/human-traffic-of-stadium/) | [Solution](https://github.com/mdh266/SQL-Practice/blob/master/leetcode/HumanTrafficStadium.sql) |
+
+
+
+
