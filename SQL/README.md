@@ -46,8 +46,10 @@
 
 * This constraint allows the user to enter the null values (disadvantage)
 
-* All Basic Syntax
+* All Basic Syntax CREATE/DISABLE/ENABLE/DELETE
 ```
+Different ways to create constrait
+##################################
 Syntax-1a: Column Level constraint
 ========
 	  CREATE TABLE table_name (
@@ -89,6 +91,23 @@ CREATE TABLE table_name (
     ...,
     CONSTRAINT <constraint_name> UNIQUE(column_name1, column_name2)
 );
+
+Syntax-4 : Adding constraint after creation of table
+####################################################
+ALTER TABLE table_name ADD CONSTRAINT <constraint_name> UNIQUE(column_name1, column_name2);
+
+Syntax : How to disable the constraint temporarily
+##################################################
+ALTER TABLE table_name DISABLE CONSTRAINT unique_constraint_name;
+
+Syntax : How to enable the constraint back
+##########################################
+ALTER TABLE table_name ENABLE CONSTRAINT unique_constraint_name;
+
+Syntax : Dropping the constraint
+################################
+ALTER TABLE table_name DROP CONSTRAINT unique_constraint_name;
+
 ```
 
 ### 2. NotNull Constraint    
