@@ -61,7 +61,7 @@ Constraints
 ********************
 * This constraint does not allows us to enter duplicate values into column of an Database table.
 
-* We can apply the unique constraint morethan one column in the Same table(advantage)
+* We can apply the unique constraint more than one column in the Same table(advantage)
 
 * This constraint allows the user to enter the null values (disadvantage)
 

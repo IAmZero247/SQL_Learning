@@ -25,15 +25,15 @@
 ------------
    1) Unique
 
-   2) not null
+   2) Not Null
 
-   3) check
+   3) Check
 
-   4) default
+   4) Default
 
-   5) primary key
+   5) Primary Key
   
-   6) foreign key (or) Referential Integrity
+   6) Foreign Key (or) Referential Integrity
 ## LeetCode 
 -----------
 
