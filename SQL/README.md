@@ -10,13 +10,13 @@
 
 4. We can apply the Constraints at two levels
 
-   1. Column level constraints
-   ===========================
+   1. <ins>Column level constraints</ins>
+   
      Applying the constraints after defining the column immediately then those constraints are called as 
      "Column level constraints"
 
-   2. Table level constraints
-   ===========================
+   2. <ins>Table level constraints</ins>
+   
      Applying the constraints after defining all the columns in the table (or) at the end of the table are called as 
      "Table level constraints".
 
@@ -34,8 +34,33 @@
    5) Primary Key
   
    6) Foreign Key (or) Referential Integrity
+   
+   
+### Unique Constraint    
+------------
+
+
+* This constraint does not allows us to enter duplicate values into column of an Database table.
+
+* We can apply the unique constraint more than one column in the Same table(advantage)
+
+* This constraint allows the user to enter the null values (disadvantage)
+
+### NotNull Constraint    
+------------
+### Check Constraint    
+------------
+### Default Constraint    
+------------
+### Primary Key Constraint    
+------------
+### Foreign Key Constraint    
+------------
 ## LeetCode 
 -----------
+
+
+
 
 | Question                | Answer                 |
 |-------------------------|------------------------:|
