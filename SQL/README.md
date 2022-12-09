@@ -40,11 +40,56 @@
 ------------
 
 
-* This constraint does not allows us to enter duplicate values into column of an Database table.
+* This constraint does not allows us to enter duplicate values into column (or combination of columns)of an Database table.
 
 * We can apply the unique constraint more than one column in the Same table(advantage)
 
 * This constraint allows the user to enter the null values (disadvantage)
+
+* All Basic Syntax
+```
+Syntax-1a: Column Level constraint
+========
+	  CREATE TABLE table_name (
+		...
+		column_name data_type UNIQUE
+		...
+	  );
+
+Syntax-1b
+========
+	CREATE TABLE table_name (
+		...,
+		UNIQUE(column_name)
+	);
+
+Syntax-2a: Defining the Unique Constraint by CONSTRAINT clause
+========
+CREATE TABLE table_name (
+    ...
+    column_name data_type CONSTRAINT <constraint_name> <contraint_type>;
+    ...
+);
+
+Syntax-2b : Table level constraint
+========
+CREATE TABLE table_name (
+    ...
+    column_name data_type,
+    ...,
+    CONSTRAINT <constraint_name> UNIQUE(column_name)
+);
+
+Syntax-3 : Table level Unique Constraint for defining multiple columns as unique
+========
+CREATE TABLE table_name (
+    ...
+    column_name1 data_type,
+    column_name2 data_type,
+    ...,
+    CONSTRAINT <constraint_name> UNIQUE(column_name1, column_name2)
+);
+```
 
 ### 2. NotNull Constraint    
 ------------
@@ -54,7 +99,7 @@
 ------------
 ### 5. Primary Key Constraint    
 ------------
-### 6. Foreign Key Constraint    
+### ()Foreign Key Constraint    
 ------------
 ## LeetCode 
 -----------
