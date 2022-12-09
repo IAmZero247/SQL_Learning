@@ -49,7 +49,7 @@
 * All Basic Syntax CREATE/DISABLE/ENABLE/DELETE
 ```
 Syntax : Different ways to create constrait
-##################################
+###########################################
 Syntax-1a: Column Level constraint
 ========
 	  CREATE TABLE table_name (
