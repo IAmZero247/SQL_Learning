@@ -48,7 +48,7 @@
 
 * All Basic Syntax CREATE/DISABLE/ENABLE/DELETE
 ```
-Different ways to create constrait
+Syntax : Different ways to create constrait
 ##################################
 Syntax-1a: Column Level constraint
 ========
