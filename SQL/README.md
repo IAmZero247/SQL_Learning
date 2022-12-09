@@ -36,7 +36,7 @@
    6) Foreign Key (or) Referential Integrity
    
    
-### Unique Constraint    
+### 1. Unique Constraint    
 ------------
 
 
@@ -46,15 +46,15 @@
 
 * This constraint allows the user to enter the null values (disadvantage)
 
-### NotNull Constraint    
+### 2. NotNull Constraint    
 ------------
-### Check Constraint    
+### 3. Check Constraint    
 ------------
-### Default Constraint    
+### 4. Default Constraint    
 ------------
-### Primary Key Constraint    
+### 5. Primary Key Constraint    
 ------------
-### Foreign Key Constraint    
+### 6. Foreign Key Constraint    
 ------------
 ## LeetCode 
 -----------
