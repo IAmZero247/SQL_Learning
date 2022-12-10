@@ -46,7 +46,7 @@
 
 * This constraint allows the user to enter the null values (disadvantage)
 
-* All Basic Syntax CREATE/DISABLE/ENABLE/DELETE
+* <ins>All Basic Syntax CREATE/DISABLE/ENABLE/DELETE</ins>
 ```
 Syntax : Different ways to create constrait
 ###########################################
@@ -109,6 +109,46 @@ Syntax : Dropping the constraint
 ALTER TABLE table_name DROP CONSTRAINT unique_constraint_name;
 
 ```
+
+* <ins>Workspace Queries</ins>
+```
+-- column level constraint i.e. constraint name allocated by oracle i.e.,SYS_C007242
+CREATE TABLE clients (
+    client_id NUMBER UNIQUE,
+    first_name VARCHAR2(50) ,
+    last_name VARCHAR2(50)
+);
+
+-- adding column as unique after creating the table
+ALTER TABLE clients ADD CONSTRAINT uq_clients_first_name1 UNIQUE(first_name);
+
+-- Table level constraint i.e.constraint name allocated by oracle i.e.,uq_clients_first_name2
+CREATE TABLE clients (
+    client_id NUMBER,
+    first_name VARCHAR2(50) ,
+    last_name VARCHAR2(50),
+    CONSTRAINT uq_clients_first_name2 UNIQUE(client_id)  
+);
+
+CREATE TABLE clients (
+    client_id NUMBER,
+    first_name VARCHAR2(50) ,
+    last_name VARCHAR2(50),
+    CONSTRAINT uq_clients_first_name3 UNIQUE(client_id,first_name,last_name)  
+);
+
+insert into clients values(01,'Mahesh','Kumar');
+insert into clients values(null,'Mahesh','Kumar');
+insert into clients values(02,'Ashok','Kumar');
+-- while inserting duplicate clientid of unique column in Database table
+insert into clients values(01,'Sarath','Kumar');
+/*
+Error starting at line : 19 in command -
+insert into clients values(01,'Sarath','Kumar')
+Error report -
+ORA-00001: unique constraint (MAHESH.SYS_C007242) violated
+```
+*/
 
 ### 2. NotNull Constraint    
 ------------
