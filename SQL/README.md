@@ -148,7 +148,6 @@ insert into clients values(01,'Sarath','Kumar')
 Error report -
 ORA-00001: unique constraint (MAHESH.SYS_C007242) violated
 ```
-*/
 
 ### 2. NotNull Constraint    
 ------------
