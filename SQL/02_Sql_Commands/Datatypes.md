@@ -1,7 +1,6 @@
 # Oracle Datatypes
 ------------
 
-## INSERT SYNTAX - Adding new data to sample Table 
 
 *  Datatype >>> It is used to define the type of the value to be holded in the database column
 
