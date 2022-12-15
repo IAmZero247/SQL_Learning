@@ -152,4 +152,23 @@ DOB              DATE
 CREATED_DT       TIMESTAMP(6)
 ```
 
-` 
+## We Explored on Oracle DataTypes
+------------
+
+     -> Whole Numbers  >>>> number
+
+     -> Decimal Numbers >>>> number(precision,scale) >>> Precision(No of Digits) ,Scale(no of Decimal Points)
+
+     -> char >>> Fixed Length of Character Datatype
+
+     -> varchar >>> Variable length of Character Datatype
+
+     -> varchar/varchar2   >>> Varchar(SQL Language), Varchar2(Oracle)
+
+     -> Holding Date Values in DB Column >>>> Date
+
+     -> Holding Date & Time Value in DB Column >>>> Timestamp
+
+     -> Clob >>>> Storing > 4000 Characters
+     
+     -> Blob >>>> Storing Files,Audios,Videos etc.,
