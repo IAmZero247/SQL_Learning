@@ -109,7 +109,7 @@
  ======
  DELETE FROM <table_name>;
 
- Ex: DELETE FROM abc_customers;  >>>> It will delete all rows from database table because we don't have any where                                             condition in sql statement.
+ Ex: DELETE FROM abc_customers;  >>>> It will delete all rows from database table because we don't have any where filtering                                           condition in sql statement.
 
   
  Syntax:
