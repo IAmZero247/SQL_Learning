@@ -98,7 +98,7 @@
     =========================
        SELECT * FROM <table_name>;   >> Retrieves all the information from given table
 
-   Example 
-   =======
-      SELECT * FROM abc_customers;
+    Example 
+    =======
+       SELECT * FROM abc_customers;
 ```
