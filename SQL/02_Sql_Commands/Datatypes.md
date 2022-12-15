@@ -84,7 +84,7 @@
         2.  varchar2 is developed by Oracle Corporation       
 
 ###   <ins>3) Date</ins>
-  =======
+  
 1. This datatype allows us to defind date values in the Database column such as DateofJoining,HireDate,BirthDate,PurchasedDate,DateofBooking etc.,
 
 2. The default format of Date in Oracle Database is "DD-MON-YY"  >>> 12-FEB-13
