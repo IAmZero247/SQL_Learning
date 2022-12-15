@@ -73,12 +73,12 @@
     ```
 	 Example
         ========
-           studentName varchar(30);
+           studentName VARCHAR(30);
 
            Name of Student :: Alice
     ```    
        
-	4. NOTE : Difference between varchar (Vs) varchar2 datatype ?
+	4. NOTE : <ins>Difference between varchar (Vs) varchar2 datatype ?</ins>
         
         1.  varchar is developed by SQL 
        
@@ -103,5 +103,54 @@
 2.  Blob  >>> Binary Large Object >> Which can be used for storing files,audios,videos etc.,>>>> 1 GB -TO- 4GB
 
 3.  BFile >>> Binary File >> Which can be used for externdal data such as external files,binary files etc.,> 1 GB -TO- 4GB
+
+
+## Lab
+
+
+```
+SQL Commands
+============
+
+SQL >>> CREATE TABLE a1_employees(empId NUMBER(5),empName VARCHAR2(50),gender CHAR(1),dob DATE,created_dt TIMESTAMP);
+
+SQL >>>  INSERT INTO a1_employees VALUES(2561,'Mahesh','M',12-SEP-2015,sysdate); 
+
+SQL >>>> INSERT INTO a1_employees VALUES(5656,'Rani','F','24-APR-2004',sysdate);
+
+SQL >>>> INSERT INTO a1_employees VALUES(5657,'Ramesh','M','24-APR-2004',sysdate);
+
+SQL >>>> INSERT INTO a1_employees VALUES(5658,'Kumari','F','18-APR-2002',sysdate);
+
+SQL >>>> INSERT INTO a1_employees VALUES(5659,'Swapna','F','04-APR-2014',sysdate);
+
+SQL >>>> INSERT INTO a1_employees VALUES(5660,'Suresh','M','14-04-2003',sysdate);
+
+SQL >>>> SELECT * FROM a1_employees
+
+OUTPUT
+======
+2561	Mahesh	M	12-09-15	30-11-22 10:01:20.000000000 PM
+5656	Rani	F	24-04-04	30-11-22 10:10:56.000000000 PM
+5657	Ramesh	M	24-04-04	30-11-22 10:12:31.000000000 PM
+5658	Kumari	F	18-04-02	30-11-22 10:12:31.000000000 PM
+5659	Swapna	F	04-04-14	30-11-22 10:12:31.000000000 PM
+5660	Suresh	M	14-04-03	30-11-22 10:12:32.000000000 PM
+5660	Suresh	M	14-04-03	30-11-22 10:14:19.000000000 PM
+5660	Suresh	M	14-04-03	30-11-22 10:14:19.000000000 PM
+5659	Swapna	F	04-04-14	30-11-22 10:14:53.000000000 PM
+
+SQL >>>> DESC ASHOKIT_EMPLOYEES 
+
+OUTPUT
+======
+Name       Null? Type         
+---------- ----- ------------ 
+EMPID            NUMBER(5)    
+EMPNAME          VARCHAR2(50) 
+GENDER           CHAR(1)      
+DOB              DATE         
+CREATED_DT       TIMESTAMP(6)
+```
 
 ` 
