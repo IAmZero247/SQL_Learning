@@ -105,7 +105,7 @@
 
 ```
 
- Syntax
+ Syntax:
  ======
  DELETE FROM <table_name>;
 
@@ -116,8 +116,8 @@
  =======
  DELETE FROM <table_name> where <Conditions>;
 
- Ex : DELETE FROM abc_customers where customer_id=1; 
-      >>> Deleting record from Table whose customer_id as 1
+ Ex:  DELETE FROM abc_customers where customer_id=1; 
+	  >>> Deleting record from Table whose customer_id as 1
 
       DELETE FROM abc_customers where customer_name='Jack'; 
 	  >>> Deleting record from Table whose customer_name as Jack
