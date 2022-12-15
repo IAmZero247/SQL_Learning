@@ -74,9 +74,9 @@
 
   Example
   =======
-    INSERT INTO abc_customers(customer_id,customer_name,gender,age,location) VALUES(01,'Mahesh','Male',35,'Hyderabad');
+    INSERT INTO abc_customers(customer_id,customer_name,gender,age,location) VALUES(01,'Alice','Female',35,'Hyderabad');
 
-    INSERT INTO abc_customers(customer_id,customer_name,gender,age,location) VALUES(02,'Ashok','Male',35,'Hyderabad');
+    INSERT INTO abc_customers(customer_id,customer_name,gender,age,location) VALUES(02,'Jack','Male',35,'Banglore');
 
   
   Example
