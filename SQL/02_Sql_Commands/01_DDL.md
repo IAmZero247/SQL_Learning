@@ -81,7 +81,7 @@
   
   Example
   =======
-    INSERT INTO abc_customers VALUES(03,'Rajesh','Male',40,'Mumbai');
+    INSERT INTO abc_customers VALUES(03,'Jennifer','Female',40,'Mumbai');
 
   Inject value via variable in programming -> INSERT INTO abc_customers VALUES(&customerId,&customername,&gender,&age,&location);
   
