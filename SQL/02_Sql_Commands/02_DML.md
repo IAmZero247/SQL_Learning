@@ -27,7 +27,7 @@
   
  ``` 
  
- ## UPDATE SYNTAX - How to Modify the data in Database Table
+## UPDATE SYNTAX - How to Modify the data in Database Table
  
  
 * By using update statement we can change the existing column value based on some conditions.
@@ -93,4 +93,40 @@
 
 ```		
 
+
+## DELETE SYNTAX - How to Remove the Unwanted records from Database Table
+ 
+
+* By using delete command we can remove unwanted records from Database table.
+
+* If you specifying the where condition in delete statement then will delete particular records based on condition specified.
+
+* If you omit (or) ignore the condition in delete statement then will delete all rows from database table.
+
+```
+
+ Syntax
+ ======
+ DELETE FROM <table_name>;
+
+ Ex: DELETE FROM abc_customers;  >>>> It will delete all rows from database table because we don't have any where                                             condition in sql statement.
+
+  
+ Syntax:
+ =======
+ DELETE FROM <table_name> where <Conditions>;
+
+ Ex : DELETE FROM abc_customers where customer_id=1; 
+      >>> Deleting record from Table whose customer_id as 1
+
+      DELETE FROM abc_customers where customer_name='Jack'; 
+	  >>> Deleting record from Table whose customer_name as Jack
+
+      DELETE FROM abc_customers where gender='Male';
+	  >>> Deleting customers from table whose gender as "Male"
+
+      DELETE FROM abc_customers where gender='Male' and age >=35;
+	  >>>Deleting customers from table whose gender as "Male" and age should be greater than 35.
+
+```
  
