@@ -90,7 +90,7 @@ SQL >>>> ALTER USER karthik IDENTIFIED BY mynewpassword;
 ## How to lock an User Account
 
 ```
-SQL >>>> ALTER USER karthik ACCOUNT LOCK;   >>>>> Locking the account
+SQL >>>> ALTER USER karthik ACCOUNT LOCK;   >>>> Locking the account
 ```
 
 ## How to unlock the User Account
