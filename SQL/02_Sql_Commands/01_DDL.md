@@ -320,11 +320,11 @@
 
 2. delete
  
-  1) It is a DML Command.
+  * It is a DML Command.
 
-  2) Delete will leads to temporary deletion of all records (or) particular records.
+  * Delete will leads to temporary deletion of all records (or) particular records.
 
-  3) We can delete the specific record.
+  * We can delete the specific record.
 
 
 ### <ins>Difference between TRUNCATE and DROP</ins>
