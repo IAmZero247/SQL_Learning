@@ -230,9 +230,8 @@
 ```
     Syntax:
     =======
-    RENAME  <old_table_name> TO <new_table_name>
-		
-	ALTER TABLE <old_table_name> TO <new_table_name>;
+    RENAME  <old_table_name> TO <new_table_name>;
+    ALTER TABLE <old_table_name> TO <new_table_name>;
 
     Example 1:
     ==========
