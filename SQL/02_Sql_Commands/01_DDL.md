@@ -95,7 +95,7 @@
  
  
 ## Step-3: SELECT SYNTAX
-======
+
  * Just Validating the Information by selecting data from Database Table using DRL Command "SELECT"
 
 ```
