@@ -246,7 +246,7 @@
     ==========
 	SQL >>> ALTER TABLE sbi_customers rename to axis_customers;
 	
-	OUTPUT:
+    OUTPUT:
     =======
     Table SBI_CUSTOMERS altered.
 	
