@@ -242,8 +242,9 @@
     ======
     Table renamed.
 		
+		
 	Example 2:
-    ==========
+	==========
 	SQL >>> ALTER TABLE sbi_customers rename to axis_customers;
 	
     OUTPUT:
