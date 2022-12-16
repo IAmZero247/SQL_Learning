@@ -14,13 +14,24 @@
 
       >> Deals with Creating/Modifying/Dropping Structure of Database Objects.
 
-      >> DDL Commands are  "CREATE, ALTER, DROP,TRUNCATE"
+      >> DDL Commands are  "CREATE,ALTER,DROP,TRUNCATE,RENAME,FLASHBACK,PURGE"
+	  
+	  >> All DDL Commands are by default "AUTO COMMIT";
 
    2) <ins>Data Manipulation Lanaguage(DML) Commands (or) DML Statements</ins>
       
        >> Deals with Data of an Database objects
 
-       >> DML Commands are "INSERT, UPDATE, DELETE"     
+       >> DML Commands are "INSERT, UPDATE, DELETE"  
+       
+       >> All DML Commands are not by default "AUTO COMMIT"	  
+
+       >> NOTE
+  
+			* When we are talking about update and delete commands we used "where" clause which can be used to specify the condition for sql statements
+
+			* If we are not using where clause in update statment (or) delete statement means it will perform update operation and delete operation on all rows of the database table.
+	   
 
    3) <ins>Data Control Language(DCL) Commands (or) DCL Statements</ins>
        
@@ -30,7 +41,7 @@
 
        >> DCL Commands are "GRANT,REVOKE"       
 
-   4) <ins>Date Retrevial Language(DRL) Commands (or) DRL Statements</ins>
+   4) <ins>Date Retrevial Language(DRL) / Data Query Language (DQL) Commands (or) DRL/DQL Statements</ins>
 
        >> Deals with Retreving the data from Database objects
 
