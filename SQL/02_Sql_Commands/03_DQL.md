@@ -1,95 +1,59 @@
-# Transaction Control Language [TCL] Commands
+# Data Query Language [DQL] Commands
 ------------
 
 
 
 
-* We have three TCL Commands 
+* This command is used to retreive the data from the existing table.
 
-	* COMMIT    >>> Saving the information permanently in the database
-
-	* ROLLBACK  >>> Undo Operation
-
-	* SAVEPOINT >>> It is used to save a set of transactions under a name
-
-
-
-## Transaction And Session
-Transaction
-===========
-* Transaction: Any Operation which we can perform on the database by using DML Commands i.e.,insert,update,delete on the Database then 
-  it is known as "Transaction"
-
-* Session: It can be defined certain amount of time (or) interval given to user to perform some activities.
-	1. During the Login to Logoff of an user what ever operation done by the user i.e.,Transactions
-	2. Basically sessions can be terminated in two ways
-		* Normal Termination   >>> exit (or) quit   >>> Always save the data (or) Transactions successful
-		* Abnormal Termination >>> Directly switching off the CPU, Directly Hit PowerOff Button etc., >>> Doesn't saves the data (or) transactions unsuccessful
-
-
-
-## COMMIT
-
-* This command is used to save the transactions explictly from the moment of the user login to database to till execute this command.
-
+* By using this command we can retrieve all the records in the table and also we can retrieve specific recoreds from the database table.
 ```
-Syntax:
-=======
-   COMMIT;
+   Syntax:
+   ========
+       SELECT * FROM <table_name>;
+
+       SELECT * FROM <table_name> WHERE <condition>;
+
+   Example:
+   ========
+       SELECT * FROM emp;
+
+       SELECT * FROM emp WHERE dept=10;
+
+  >> In the above select command we are retrieving all the records from emp table
+
+  >> * represent selecting all columns from emp table
 ```
 
+  
+##  Selection
+  
+* Retrieving the data from Database table completely or partially based on condition 
 
-## ROLLBACK
-
-* This command is used to discard all the transactions done on Database table before performing commit operation
-
-```
-Syntax:
-=======
-   ROLLBACK;
-```
-
-## Example Scenario on Commit and Rollback
-
-
-```
-    User  >>>> Logged into DB   >>>> Insert(10),Update(10),delete(15) >>>> By Default this operations will not saved
-
-
-    If we want to save all these operations permanently to the database table >>>> COMMIT(SAVE)
-
+```   
+   Example:
+   ========
+      SELECT * FROM emp;
  
-    If we don't want to save all these operations into Database >>>> ROLLBACK (UNDO)
+      SELECT * FROM emp WHERE deptno=10;
 ```
 
-
-## SAVEPOINT
-
-* This command is used to save a set of transactions under a name.
-
-```
- Syntax:
- =======
-    SAVEPOINT <save_point_name>;
-```
-
-
-## Example Scenario on Commit , Rollback and Savepoint
-
-```
-   User >>>>> Logged into DB >>>> Insert(2)   >>>> Added One Savepoint      >>>> SAVEPOINT  insertSavePoint
-
-                             >>>> Update(2)   >>>> Added one More SavePoint >>>>> SAVEPOINT updateSavePoint
-
-   User >>>>> I can do "ROLLBACK" Operation >> Insert(2),Update(2) will be discarded from Database.
-
-   User >>>>> I can do "COMMIT" Operation   >> Insert(2),Update(2) will be saved into Database permanently
-
-   User >>>>> I can do "ROLLBACK" to particular "Savepoint" 
+##  Projection
  
-        SQL>>> ROLLBACK TO updateSavePoint >>>> Only Update(2) will be discarded
+* Retreiving the data from specific columns of an Database table known as "Projection"
 
-        SQL>>> ROLLBACK TO insertSavePoint >>>> Only Insert(2) will be discarded
+* In projection we can't use * symbol in the select query.
 
-        SQL>>> COMMIT;   >>>> Nothing will be saved
+```
+   Example:
+   ========
+     SELECT empno,ename FROM emp;
+ 
+     SELECT empno,ename,job FROM emp;
+
+     SELECT empno,ename,job,sal FROM emp;
+
+     SELECT empno FROM emp;
+
+     SELECT empname FROM emp
 ```
