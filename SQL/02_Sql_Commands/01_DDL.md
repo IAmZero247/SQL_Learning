@@ -270,7 +270,7 @@
     OUTPUT
     =======
       Table AXIS_CUSTOMERS dropped.
-
+```
 * What ever the tables we got dropped in oracle database those table are available in ORACLE RECYCLE BIN.
 
 * To retreive the oracle recycle bin then we need to use the below command 
