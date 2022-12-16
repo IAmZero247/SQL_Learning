@@ -1,4 +1,4 @@
-# Data Control Language [DCL] Commands
+# Data Control Language [DCL]
 ------------
 
 
@@ -63,48 +63,48 @@ Revoke succeeded.
 ## To view all the users in the Database
 
 ```
-SQL >>>> SELECT * FROM ALL_USERS;
+SQL >>>> select * from all_users;
 ```
 ## To view all the details about Database users
 
 ```
-SQL >>>> SELECT * FROM DBA_USERS;
+SQL >>>> select * from dba_users;
 ```
 
 ## To View all the tables in Particular Account
 
 ```
-SQL >>>> SELECT * FROM TAB;
+SQL >>>> select * from tab;
 ```
 
 ## To Know the username Of Connected Account
 
 ```
-SQL  >>>> SHOW USER
+SQL  >>>> show user
 ```
 ## To Change the Password of an User Account
 
 ```
-SQL >>>> ALTER USER karthik IDENTIFIED BY mynewpassword;
+SQL >>>> alter user karthik identified by mynewpassword;
 ```
 ## How to lock an User Account
 
 ```
-SQL >>>> ALTER USER karthik ACCOUNT LOCK;   >>>>> Locking the account
+SQL >>>> alter user karthik account lock;   >>>>> Locking the account
 ```
 
 ## How to unlock the User Account
 
 ```
-SQL >>>> ALTER USER karthik ACCOUNT UNLOCK;  >>>> Unlocking the account
+SQL >>>> alter user karthik account unlock;  >>>> Unlocking the account
 ```
 
 ## How to drop the user
 
 ```
-SQL >>> DROP USER <uname> CASCADE
+SQL >>> drop user <username> cascade
 
-    >>> DROP USER karthik CASCADE;
+    >>> drop user karthik cascade;
 ```
 
 *  If the user account is empty then we no need to define cascade and if the user account is non-empty then we need to use 
