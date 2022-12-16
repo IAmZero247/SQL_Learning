@@ -290,4 +290,48 @@
         FLASHBACK TABLE axis_customers TO BEFORE DROP;
 ```
 * To See all the tables in the database --> SHOW TABLES;
+
+
+* We can delete the dropped table from oracle recycle bin with help of "PURGE" command
+```
+   Syntax:
+   =======
+   PURGE TABLE <table_name> 
+
+   Example:
+   ========
+   SQL >>> PURGE TABLE axis_customers;
+
+   OUTPUT:
+   =======
+   Table purged.
+```
+
+
+### <ins>Differences between TRUNCATE and DELETE</ins>
+ 
+1. TRUNCATE
+ 
+  * It is a DDL Command.
+  
+  * Truncate will leads to Permanent deletion of all records at a time.
+
+  * We cannot delete the specific record through truncate command.
+
+2. delete
+ 
+  1) It is a DML Command.
+
+  2) Delete will leads to temporary deletion of all records (or) particular records.
+
+  3) We can delete the specific record.
+
+
+### <ins>Difference between TRUNCATE and DROP</ins>
+
+*  Truncate and Drop both are DDL Commands.
+
+*  Truncate will be focusing on data to be deleted permanently but it will not delete Database Structure.
+
+*  Drop always focusing on deleting the database object structure permanently.
 	   
