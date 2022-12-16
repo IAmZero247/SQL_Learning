@@ -26,12 +26,13 @@
        
        >> All DML Commands are not by default "AUTO COMMIT"	  
 
-       >> NOTE
+       ```
+	   NOTE
   
-			1. When we are talking about update and delete commands we used "where" clause which can be used to specify the condition for sql statements
+	   1. When we are talking about update and delete commands we used "where" clause which can be used to specify the condition for sql statements
 
-			2. If we are not using where clause in update statment (or) delete statement means it will perform update operation and delete operation on all rows of the database table.
-	   
+	   2. If we are not using where clause in update statment (or) delete statement means it will perform update operation and delete operation on all rows of the database table.
+	   ```
 
    3) <ins>Data Control Language(DCL) Commands (or) DCL Statements</ins>
        
