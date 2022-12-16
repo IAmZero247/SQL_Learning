@@ -179,7 +179,7 @@
 	```
      Syntax:
      =======
-       ALTER TABLE <table_name> RENAME COLUMN <old_column_name> TO <new_column_name>;
+      ALTER TABLE <table_name> RENAME COLUMN <old_column_name> TO <new_column_name>;
 
      Example:
      ========
@@ -230,9 +230,9 @@
 ```
     Syntax:
     =======
-        RENAME  <old_table_name> TO <new_table_name>
+    RENAME  <old_table_name> TO <new_table_name>
 		
-		ALTER TABLE <old_table_name> TO <new_table_name>;
+	ALTER TABLE <old_table_name> TO <new_table_name>;
 
     Example 1:
     ==========
@@ -243,9 +243,9 @@
     Table renamed.
 		
 		
-	Example 2:
-	==========
-	SQL >>> ALTER TABLE sbi_customers rename to axis_customers;
+    Example 2:
+    ==========
+    SQL >>> ALTER TABLE sbi_customers rename to axis_customers;
 	
     OUTPUT:
     =======
