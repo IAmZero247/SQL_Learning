@@ -5,11 +5,12 @@
 
 
 * We have three TCL Commands 
-	COMMIT >>> saving the information permanently in the database
 
-    ROLLBACK >>> Undo Operation
+	* COMMIT >>> Saving the information permanently in the database
 
-    SAVEPOINT >>>> It is used to save a set of transactions under a name
+	* ROLLBACK >>> Undo Operation
+
+	* SAVEPOINT >>>> It is used to save a set of transactions under a name
 
 
 
@@ -74,7 +75,6 @@ Syntax:
 
 
 ## Example Scenario on Commit , Rollback and Savepoint
-=======
 
 ```
    user >>>>> Logged into DB >>>> Insert(2)   >>>> Added One Savepoint      >>>> SAVEPOINT  insertSavePoint
