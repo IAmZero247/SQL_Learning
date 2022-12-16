@@ -289,5 +289,5 @@
     =======
         FLASHBACK TABLE axis_customers TO BEFORE DROP;
 ```
-* To See all the tables in the database --> show tables;
+* To See all the tables in the database --> SHOW TABLES;
 	   
