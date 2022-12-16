@@ -1,113 +1,95 @@
-# Data Control Language [DCL]
+# Transaction Control Language [TCL] Commands
 ------------
 
 
-* This commands are used by DBA for granting permissions to users and Revoking the permission from users.
 
-* We have two DCL Commands i.e., grant, revoke
 
-    GRANT >>>> providing the permissions
+* We have three TCL Commands 
+	COMMIT >>> saving the information permanently in the database
+
+    ROLLBACK >>> Undo Operation
+
+    SAVEPOINT >>>> It is used to save a set of transactions under a name
+
+
+
+## Transaction And Session
+Transaction
+===========
+* Transaction: Any Operation which we can perform on the database by using DML Commands i.e.,insert,update,delete on the Database then 
+  it is known as "Transaction"
+
+* Session: It can be defined certain amount of time (or) interval given to user to perform some activities.
+	1. During the Login to Logoff of an user what ever operation done by the user i.e.,Transactions
+	2. Basically sessions can be terminated in two ways
+		* Normal Termination   >>> exit (or) quit   >>> Always save the data (or) Transactions successful
+		* Abnormal Termination >>> Directly switching off the CPU, Directly Hit PowerOff Button etc., >>> Doesn't saves the data (or) transactions unsuccessful
+
+
+
+## COMMIT
+
+* This command is used to save the transactions explictly from the moment of the user login to database to till execute this command.
+
+```
+Syntax:
+=======
+   COMMIT;
+```
+
+
+## ROLLBACK
+
+* This command is used to discard all the transactions done on Database table before performing commit operation
+
+```
+Syntax:
+=======
+   ROLLBACK;
+```
+
+## Example Scenario on Commit and Rollback
+
+
+```
+    User  >>>> Logged into DB   >>>> Insert(10),Update(10),delete(15) >>>> By Default this operations will not saved
+
+
+    If we want to save all these operations permanently to the database table >>>> COMMIT(SAVE)
+
  
-    REVOKE >>>> Takingout the permissions
-
-
-
-## To Create User 
+    If we don't want to save all these operations into Database >>>> ROLLBACK (UNDO)
 ```
-Syntax:
+
+
+## SAVEPOINT
+
+* This command is used to save a set of transactions under a name.
+
+```
+ Syntax:
+ =======
+    SAVEPOINT <save_point_name>;
+```
+
+
+## Example Scenario on Commit , Rollback and Savepoint
 =======
-CREATE USER <uname> IDENTIFIED BY <password>;
-
-Example:
-========
-CREATE USER karthik IDENTIFIED BY mypassword;
-
-Output:
-=======
-User KARTHIK created.
-```
-
-## Granting the permissions to karthik user for creating,insert,updating,deleting
-```
-Syntax:
-=======
-GRANT RESOURCE,CONNECT TO <uname>;
-
-Example:
-========
-GRANT RESOURCE,CONNECT TO karthik;
-
-Output:
-=======
-Grant succeeded.
-```
-
-
-## Removong the permissions to karthik user for creating,insert,updating,deleting
 
 ```
-Syntax:
-=======
-REVOKE RESOURCE FROM <uname>;
+   user >>>>> Logged into DB >>>> Insert(2)   >>>> Added One Savepoint      >>>> SAVEPOINT  insertSavePoint
 
-Example:
-========
-REVOKE RESOURCE FROM karthik;
+                             >>>> Update(2)   >>>> Added one More SavePoint >>>>> SAVEPOINT updateSavePoint
 
-Output:
-=======
-Revoke succeeded.
+   User >>>>> I can do "ROLLBACK" Operation >> Insert(2),Update(2) will be discarded from Database.
+
+   User >>>>> I can do "COMMIT" Operation   >> Insert(2),Update(2) will be saved into Database permanently
+
+   User >>>>> I can do "ROLLBACK" to particular "Savepoint" 
+ 
+        SQL>>> ROLLBACK TO updateSavePoint >>>> Only Update(2) will be discarded
+
+        SQL>>> ROLLBACK TO insertSavePoint >>>> Only Insert(2) will be discarded
+
+        SQL>>> COMMIT;   >>>> Nothing will be saved
 ```
-
-
-## To view all the users in the Database
-
-```
-SQL >>>> select * from all_users;
-```
-## To view all the details about Database users
-
-```
-SQL >>>> select * from dba_users;
-```
-
-## To View all the tables in Particular Account
-
-```
-SQL >>>> select * from tab;
-```
-
-## To Know the username Of Connected Account
-
-```
-SQL  >>>> show user
-```
-## To Change the Password of an User Account
-
-```
-SQL >>>> alter user karthik identified by mynewpassword;
-```
-## How to lock an User Account
-
-```
-SQL >>>> alter user karthik account lock;   >>>>> Locking the account
-```
-
-## How to unlock the User Account
-
-```
-SQL >>>> alter user karthik account unlock;  >>>> Unlocking the account
-```
-
-## How to drop the user
-
-```
-SQL >>> drop user <username> cascade
-
-    >>> drop user karthik cascade;
-```
-
-*  If the user account is empty then we no need to define cascade and if the user account is non-empty then we need to use 
-  cascade.
-
-

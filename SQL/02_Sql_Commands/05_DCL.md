@@ -43,7 +43,7 @@ Grant succeeded.
 ```
 
 
-## Removong the permissions to karthik user for creating,insert,updating,deleting
+## Removing the permissions to karthik user for creating,insert,updating,deleting
 
 ```
 Syntax:
