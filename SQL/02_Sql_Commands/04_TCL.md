@@ -77,7 +77,7 @@ Syntax:
 ## Example Scenario on Commit , Rollback and Savepoint
 
 ```
-   user >>>>> Logged into DB >>>> Insert(2)   >>>> Added One Savepoint      >>>> SAVEPOINT  insertSavePoint
+   User >>>>> Logged into DB >>>> Insert(2)   >>>> Added One Savepoint      >>>> SAVEPOINT  insertSavePoint
 
                              >>>> Update(2)   >>>> Added one More SavePoint >>>>> SAVEPOINT updateSavePoint
 
