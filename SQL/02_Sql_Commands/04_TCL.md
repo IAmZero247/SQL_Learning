@@ -6,11 +6,11 @@
 
 * We have three TCL Commands 
 
-	* COMMIT >>> Saving the information permanently in the database
+	* COMMIT    >>> Saving the information permanently in the database
 
-	* ROLLBACK >>> Undo Operation
+	* ROLLBACK  >>> Undo Operation
 
-	* SAVEPOINT >>>> It is used to save a set of transactions under a name
+	* SAVEPOINT >>> It is used to save a set of transactions under a name
 
 
 
