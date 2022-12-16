@@ -318,7 +318,7 @@
 
   * We cannot delete the specific record through truncate command.
 
-2. delete
+2. DELETE
  
   * It is a DML Command.
 
