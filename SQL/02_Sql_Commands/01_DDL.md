@@ -31,8 +31,8 @@
                           );
 						  
 						  
-  NOTE: Naming Conventions need to be follow for any name in Oracle Database
-      ==========================================================================
+  NOTE: Naming Conventions need to be follow for any name in Oracle Database:
+      =======================================================================
       1) Every name in Database must begins with "Alphabet".
 
       2) We need to follow the mentioned charset i.e.,a-z,A-Z,0-9,@,$,#,_
@@ -61,8 +61,8 @@
                                    location VARCHAR(50)
                                   );
 
-    OUTPUT
-    ======
+    OUTPUT:
+    =======
     Table Created
 ```
 
@@ -71,21 +71,21 @@
 * Inserting the data into Database table by using DML Command "INSERT"
 
 ```
-  Syntax For Insert Command 
+  Syntax For Insert Command: 
   ==========================   
   1) INSERT INTO <table_name>(column_name_1,column_name_2.................column_name_n) VALUES(value1,value2,.....valuen);
   
   2) INSERT INTO <table_name> VALUES(value1,value2,value3,value4..................valuen);
 
-  Example
-  =======
+  Example:
+  ========
     INSERT INTO bank_customers(customer_id,customer_name,gender,age,location) VALUES(01,'Alice','Female',35,'Hyderabad');
 
     INSERT INTO bank_customers(customer_id,customer_name,gender,age,location) VALUES(02,'Jack','Male',35,'Banglore');
 
   
-  Example
-  =======
+  Example:
+  ========
     INSERT INTO bank_customers VALUES(03,'Jennifer','Female',40,'Mumbai');
 
   Inject value via variable in programming -> INSERT INTO bank_customers VALUES(&customerId,&customername,&gender,&age,&location);
@@ -99,20 +99,20 @@
  * Just Validating the Information by selecting data from Database Table using DRL Command "SELECT"
 
 ```
-    Syntax for Select Command
-    =========================
+    Syntax for Select Command:
+    ==========================
        SELECT * FROM <table_name>;   >> Retrieves all the information from given table
 
-    Example 
-    =======
+    Example: 
+    ========
        SELECT * FROM bank_customers;
 ```
 
 
 
 ```
-   Example
-   =======
+   Example:
+   ========
      SQL >>> CREATE TABLE club_users(username VARCHAR2(50),user_password VARCHAR2(100));
 ```
 
@@ -141,12 +141,12 @@
 	* We cannot add the new columns at required positions in the table.
     * Always newly added columns will be added at end of existing columns.
     ```
-     Syntax
-     ======
+     Syntax:
+     =======
        ALTER TABLE <table_name> ADD(columnname1 column1datatype..... columnnamen columnndatatype);
 
-     Example 
-     =======
+     Example: 
+     ========
        SQL >> ALTER TABLE club_users ADD (gender CHAR(1),city_name VARCHAR2(50));
     ```
        
@@ -156,14 +156,14 @@
     * By using this command either we can drop one column (or) more than one at atime.
 	
     ```
-    Syntax
-    ======
+    Syntax:
+    =======
       ALTER TABLE <table_name> DROP COLUMN <columname-1>; -- Removing only one column
 
       ALTER TABLE <table_name> DROP (columnname-1,columnname-2......columnname-n);
 
-    Example
-    =======
+    Example:
+    ========
       SQL >>> ALTER TABLE bank_customers DROP COLUMN gender; -- Removing the one column 
   
       SQL >>> ALTER TABLE bank_customers DROP(gender,age);   -- Removing the multiple columns
@@ -177,12 +177,12 @@
     * By using this command we can't rename columns name for more than one columns at a time.
 	
 	```
-     Syntax
+     Syntax:
      =======
        ALTER TABLE <table_name> RENAME COLUMN <old_column_name> TO <new_column_name>;
 
-     Example
-     =======
+     Example:
+     ========
       SQL>>ALTER TABLE bank_customers RENAME COLUMN customer_name TO customer_full_name;
 	``` 
 	
@@ -192,12 +192,12 @@
    * By using this command we can increase/decrease the size of the datatype of database columns and we can change the datatype from old datatype to new datatype.
    
    ```
-   Syntax
-   ======
+   Syntax:
+   =======
       ALTER TABLE <table_name> MODIFY column_name datatype(size);
 
       ALTER TABLE <table_name> MODIFY(column_name-1 datatype(size)...........column_name-n datatype(size));
-   Example
+   Example:
    ========
     SQL >>>> ALTER TABLE bank_customers MODIFY customer_name varchar2(100);
 
@@ -215,12 +215,12 @@
    =======
        TRUNCATE TABLE <table_name>;
 
-   Example 
-   =======
+   Example: 
+   ========
        TRUNCATE TABLE bank_customers;
 
-   OUTPUT
-   ======
+   OUTPUT:
+   =======
        Table BANK_CUSTOMERS truncated.   
 ```
 
@@ -228,26 +228,26 @@
 ------------ 
 * This command is used to change the table name from old table name to new table name
 ```
-    Syntax
-    ======
+    Syntax:
+    =======
         RENAME  <old_table_name> TO <new_table_name>
 		
 		ALTER TABLE <old_table_name> TO <new_table_name>;
 
-    Example 1
-    =========
+    Example 1:
+    ==========
     SQL >>>  RENAME bank_customers TO sbi_customers;
 
     OUTPUT
     ======
     Table renamed.
 		
-	Example 2
-    =========
+	Example 2:
+    ==========
 	SQL >>> ALTER TABLE sbi_customers rename to axis_customers;
 	
-	OUTPUT
-    ======
+	OUTPUT:
+    =======
     Table SBI_CUSTOMERS altered.
 	
 ```
@@ -259,15 +259,15 @@
 * This command is used to remove the table structure from Database objects
  
 ```    
-    Syntax
-    ======
+    Syntax:
+    =======
       DROP TABLE <table_name>;
 
-    Example
-    =======
+    Example:
+    ========
       DROP TABLE axis_customers;
 
-    OUTPUT
+    OUTPUT:
     =======
       Table AXIS_CUSTOMERS dropped.
 ```
@@ -285,8 +285,8 @@
     =======
         FLASHBACK TABLE <table_name> TO BEFORE DROP;
 
-    Example
-    =======
+    Example:
+    ========
         FLASHBACK TABLE axis_customers TO BEFORE DROP;
 ```
 * To See all the tables in the database --> SHOW TABLES;
