@@ -1,0 +1,17 @@
+---------------------%TYPE ATTRIBUTE---------------------
+DESC hr.employees;
+SET SERVEROUTPUT ON;
+
+DECLARE
+v_var1 hr.employees.JOB_ID%TYPE;
+v_var2 v_var1%TYPE;
+v_var3 hr.employees.JOB_ID%TYPE ;
+BEGIN
+v_var1 := 'IT_PROG';
+v_var2 := 'SA_MAN';
+v_var3 := NULL;
+DBMS_OUTPUT.PUT_LINE(v_var1);
+DBMS_OUTPUT.PUT_LINE(v_var2);
+DBMS_OUTPUT.PUT_LINE('HELLO' || v_var3);
+END;
+---------------------------------------------------------

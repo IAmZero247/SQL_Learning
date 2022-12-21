@@ -1,0 +1,31 @@
+-----------------------===================-----------------------
+-------------------------VARIABLE SCOPE--------------------------
+-----------------------===================-----------------------
+
+1. Use label to control the scope 
+
+
+
+-----------------------===================-----------------------
+begin <<outer>>
+DECLARE
+  v_outer VARCHAR2(50) := 'Outer Variable!';
+  v_text  VARCHAR2(20) := 'Outer-text';
+BEGIN 
+  DECLARE
+    v_text  VARCHAR2(20) := 'Inner-text'; --override v_text
+    v_inner VARCHAR2(30) := 'Inner Variable';
+  BEGIN
+      DBMS_OUTPUT.PUT_LINE('INSIDE SCOPE BEGINS');
+      DBMS_OUTPUT.PUT_LINE('CALLING V_OUTER -> ' || v_outer);
+      DBMS_OUTPUT.PUT_LINE('CALLING V_INNER -> ' || v_inner);
+      DBMS_OUTPUT.PUT_LINE('CALLING V_TEXT  -> ' || v_text);
+      DBMS_OUTPUT.PUT_LINE('Calling Outer Scope V_TEXT -> ' || outer.v_text);
+	  DBMS_OUTPUT.PUT_LINE('INSIDE SCOPE ENDS');
+  END;
+  --DBMS_OUTPUT.PUT_LINE('CALLING V_INNER -> ' || v_inner);
+    DBMS_OUTPUT.PUT_LINE('CALLING V_OUTER -> ' || v_outer);
+    DBMS_OUTPUT.PUT_LINE('CALLING V_TEXT  -> ' || v_text);
+END;
+END outer;
+----------------------------------------------------------------
