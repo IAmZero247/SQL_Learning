@@ -3,7 +3,7 @@
 ## Case Expression And Case Statement
 
 
-1. ## Case Expression
+1. ## Case Expression - Used to assign value to some variable
 
 	1. Syntax 
 	```
@@ -27,10 +27,10 @@
 	  v_salary_increase NUMBER;
 	BEGIN
 	  v_salary_increase :=  CASE v_job_code 
-							 WHEN 'SA_MAN' THEN 0.2
-							 WHEN 'SA_REP' THEN 0.3
-							ELSE 0
-							END;
+			WHEN 'SA_MAN' THEN 0.2
+			WHEN 'SA_REP' THEN 0.3
+			ELSE 0
+			END;
 	  dbms_output.put_line('Your salary increase is : '|| v_salary_increase);
 	END;
 	/************************************************************/
