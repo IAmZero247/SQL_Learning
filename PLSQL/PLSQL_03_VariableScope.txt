@@ -29,3 +29,18 @@ BEGIN
 END;
 END outer;
 ----------------------------------------------------------------
+----------------------------------------------------------------
+PL/SQL procedure successfully completed.
+
+INSIDE SCOPE BEGINS
+CALLING V_OUTER -> Outer Variable!
+CALLING V_INNER -> Inner Variable
+CALLING V_TEXT  -> Inner-text
+Calling Outer Scope V_TEXT -> Outer-text
+INSIDE SCOPE ENDS
+CALLING V_OUTER -> Outer Variable!
+CALLING V_TEXT  -> Outer-text
+
+
+PL/SQL procedure successfully completed.
+
