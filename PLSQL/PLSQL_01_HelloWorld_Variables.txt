@@ -90,10 +90,10 @@ END;
 ----------------USING BOOLEAN DATA TYPE in PL/SQL----------------
 ----------------==================================---------------
 DECLARE
-    v_booleanTrue BOOLEAN := TRUE;
+	v_booleanTrue BOOLEAN := TRUE;
 	v_booleanFalse BOOLEAN := FALSE;
 BEGIN
-    DBMS_OUTPUT.PUT_LINE(sys.diutil.bool_to_int(v_booleanTrue));
+	DBMS_OUTPUT.PUT_LINE(sys.diutil.bool_to_int(v_booleanTrue));
 	DBMS_OUTPUT.PUT_LINE(sys.diutil.bool_to_int(v_booleanFalse));
 END;
 ----------------==================================---------------
