@@ -1,6 +1,6 @@
 # Control Statements
 
-1. If , else if  and if else
+1. If , Else If  and If Else
 2. Case Expression And Case Expression
 3. Basic Loop (Do While)
 4. While Loop
