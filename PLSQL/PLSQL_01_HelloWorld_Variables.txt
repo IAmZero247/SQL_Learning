@@ -1,6 +1,33 @@
+-----------------------===================-----------------------
+-----------------------      VARIABLES    -----------------------
+-----------------------===================-----------------------
+4 Types
 
-01) Hello World Variables;
-**************************
+Scalar
+Reference
+LargeObjects
+Composite
+
+-----------------------===================-----------------------
+-----------------------     DATA TYPES    -----------------------
+-----------------------===================-----------------------
+1.  CHAR(max_length)
+2.  VARCHAR(maxlength)
+3.  NUMBER(precision, scale)
+4.  BINARY_INTEGER/PLS_INTEGER
+5.  BINARY_FLOAT
+6.  BINARY_DOUBLE
+7.  BOOLEAN
+8.  DATE 
+9.  TIMESTAMP
+10. TIMESTAMP(p) WITH TIME ZONE
+11. TIMESTAMP(p) WITH LOCAL TIME ZONE
+12. INTERVAL(p) YEAR TO MONTH
+12. INTERVAL(p) DAY TO SECOND(p)
+ 
+
+01) Hello World With Scalar Variables And Data types;
+*****************************************************
 SET SERVEROUTPUT ON;
 
 -----------------------===================-----------------------
@@ -34,7 +61,7 @@ v_interval_pl_or_mi_interval INTERVAL DAY(3) TO SECOND (6) := v_interval1+v_inte
 BEGIN 
 DBMS_OUTPUT.PUT_LINE('VARCHAR sample : ' || v_text);
 DBMS_OUTPUT.PUT_LINE('CHAR sample : ' || v_char);
-DBMS_OUTPUT.PUT_LINE( 'NUMBER sample : ' || v_num1);
+DBMS_OUTPUT.PUT_LINE('NUMBER sample : ' || v_num1);
 DBMS_OUTPUT.PUT_LINE('NUMBER sample : ' || v_num2);
 DBMS_OUTPUT.PUT_LINE('NUMBER sample : ' || v_num3);
 DBMS_OUTPUT.PUT_LINE('BINARY_INTEGER sample : ' || v_binInt);
