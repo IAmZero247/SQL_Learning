@@ -1,8 +1,8 @@
 -----------------------===================-----------------------
 -----------------------      VARIABLES    -----------------------
 -----------------------===================-----------------------
-4 Types
-
+4 Types Variables
+******************
 Scalar
 Reference
 LargeObjects
@@ -26,13 +26,14 @@ Composite
 12. INTERVAL(p) DAY TO SECOND(p)
  
 
-01) Hello World With Scalar Variables And Data types;
-*****************************************************
-SET SERVEROUTPUT ON;
 
 -----------------------===================-----------------------
 -----------------------DECLARING VARIABLES-----------------------
 -----------------------===================-----------------------
+
+01) Hello World With Scalar Variables And Data types;
+*****************************************************
+SET SERVEROUTPUT ON;
 
 DECLARE
 v_text VARCHAR(20) NOT NULL DEFAULT 'PL/SQL text variable';
