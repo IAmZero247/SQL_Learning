@@ -30,7 +30,7 @@ END;
 END outer;
 ----------------------------------------------------------------
 ----------------------------------------------------------------
-PL/SQL procedure successfully completed.
+
 
 INSIDE SCOPE BEGINS
 CALLING V_OUTER -> Outer Variable!
