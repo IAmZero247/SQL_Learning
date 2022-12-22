@@ -1,58 +1,65 @@
------------------------===================-----------------------
------------------------------IF ELSE-----------------------------
------------------------===================-----------------------
+-----------------------====================-----------------------
+-----------------------       FOR LOOP     -----------------------
+-----------------------====================-----------------------
+EXIT Statement is optional
 
 Syntax:
 
-IF condition/expession THEN 
-	statements_a1;
-	.............;
-[ELSIF 	  condition/expession THEN
-	statements_b1;
-	.............;]
-[ELSIF 	  condition/expession THEN
-	statements_c1;
-	.............;]
-[ELSE 
-	statements_def1;
-	.............;]	
-END IF;	
+FOR i IN [REVERSE] 1..100 LOOP
+ statement1;
+ statement2;
+END LOOP; 
+
 -----------------------===================-----------------------
 
-
+Example Count Till 10 
+/////////////////////
+/************************************************************/
 SET SERVEROUTPUT ON;
 SET AUTOPRINT ON;
 
 
 
 DECLARE 
-v_mynum NUMBER(3) :=111;
 BEGIN
 
-	IF v_mynum = 0 THEN
-		DBMS_OUTPUT.PUT_LINE('Number is 0');
-	ELSIF v_mynum < 10 THEN
-		DBMS_OUTPUT.PUT_LINE('Number is between 0 and 10');
-	ELSIF v_mynum < 100 THEN
-		DBMS_OUTPUT.PUT_LINE('Number is between 10 and 100');
-	ELSIF v_mynum < 1000 THEN
-		DBMS_OUTPUT.PUT_LINE('Number is between 100 and 1000');
-	ELSE
-		IF v_mynum IS NULL THEN
-			DBMS_OUTPUT.PUT_LINE('Number is null..');
-		ELSE
-			DBMS_OUTPUT.PUT_LINE('Number is equal or above 1000');
-		END IF;
-	END IF;
+	FOR i IN REVERSE 1..3 LOOP
+	DBMS_OUTPUT.PUT_LINE('My counter is : ' || i);
+	END LOOP;
+
 END;
 
+/************************************************************/
 
 
-
------------------------===================-----------------------
-
-Number is between 100 and 1000
+My counter is : 3
+My counter is : 2
+My counter is : 1
 
 
 PL/SQL procedure successfully completed.
 
+/************************************************************/
+SET SERVEROUTPUT ON;
+SET AUTOPRINT ON;
+
+
+
+DECLARE 
+BEGIN
+
+	FOR i IN  1..3 LOOP
+	DBMS_OUTPUT.PUT_LINE('My counter is : ' || i);
+	END LOOP;
+
+END;
+
+/************************************************************/
+
+My counter is : 1
+My counter is : 2
+My counter is : 3
+
+
+PL/SQL procedure successfully completed.
+-----------------------===================-----------------------
