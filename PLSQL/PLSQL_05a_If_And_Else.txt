@@ -1,0 +1,72 @@
+-----------------------===================-----------------------
+-------------------------VARIABLE SCOPE--------------------------
+-----------------------===================-----------------------
+set serveroutput on;
+set autoprint on; ----> to print bindvariable 
+
+1. Increases performance , Created in host env , Scope in work sheet
+2. Syntax 
+
+   variable varname type
+
+   variable var_t1 varchar2(30);
+   variable var_number NUMBER;
+   
+   
+   DATE/TIMESTAMP are not supported
+       variable var_date DATE; --> ERROR
+   assignment only inside begin end block
+   cant assign preci to bind ariable type
+
+-----------------------===================-----------------------
+set serveroutput on;
+set autoprint on;
+
+variable b_mybindvar1 varchar2(30);
+variable b_mybindvar2 NUMBER;
+
+DECLARE 
+v_myvariable varchar2(30);
+BEGIN
+ --Assignment here 
+ :b_mybindvar1 := 'Hello SQL';
+ :b_mybindvar2 := 100;
+v_myvariable := :b_mybindvar1;
+--dbms_output.put_line(v_myvariable);
+--dbms_output.put_line(:b_mybindvar1);
+END;
+
+
+print b_mybindvar1;
+print b_mybindvar2;
+----------------------------------------------------------------
+
+PL/SQL procedure successfully completed.
+
+B_MYBINDVAR1
+---------
+Hello SQL
+
+B_MYBINDVAR2
+---
+100
+B_MYBINDVAR1
+---------
+Hello SQL
+
+/*------------------------BIND VARIABLES--------------------------
+NOTE: When you run a bind variable creation and SELECT statement 
+together, SQL Developer may return an error but when you execute 
+them separately, there will be no problem.
+----------------------------------------------------------------*/
+
+
+variable var_sql number;
+begin 
+  :var_sql := 100;
+end;
+
+select * from hr.employees  e where  e.employee_id > :var_sql;
+
+
+----------------------------------------------------------------
