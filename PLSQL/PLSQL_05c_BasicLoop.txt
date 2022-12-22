@@ -28,10 +28,10 @@ BEGIN
 		DBMS_OUTPUT.PUT_LINE('My counter is : '|| v_counter);
 		v_counter := v_counter + 1;
 		
-		  IF v_counter = 7 THEN
-		  DBMS_OUTPUT.PUT_LINE('Now I reached : '|| v_counter);
-		  EXIT;
-		  END IF;
+		  --IF v_counter = 7 THEN
+		  --DBMS_OUTPUT.PUT_LINE('Now I reached : '|| v_counter);
+		  --EXIT;
+		  --END IF;
 
 	EXIT WHEN v_counter > 10;
 	END LOOP;
