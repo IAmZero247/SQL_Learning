@@ -115,7 +115,7 @@ BEGIN
       DBMS_OUTPUT.PUT_LINE('  My inner value is : ' || v_inner );
     END LOOP inner_loop;
  END LOOP outer_loop;
-end;
+END;
 /************************************************************/
 My outer value is : 1
   My inner value is : 2
