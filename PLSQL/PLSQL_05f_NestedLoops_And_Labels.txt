@@ -5,12 +5,8 @@ Exiting Inner loop will not exit Outer loop
 
 In case if we want to exit Outer loop from Inner loop we need to use Labels
 
-Syntax:
-
-FOR i IN [REVERSE] 1..100 LOOP
- statement1;
- statement2;
-END LOOP; 
+Syntax: 
+  EXIT [labelName] When condition;
 
 -----------------------===================-----------------------
 
