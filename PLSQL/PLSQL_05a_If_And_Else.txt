@@ -7,10 +7,10 @@ Syntax:
 IF condition/expession THEN 
 	statements_a1;
 	.............;
-[ELSEIF 	  condition/expession THEN
+[ELSIF 	  condition/expession THEN
 	statements_b1;
 	.............;]
-[ELSEIF 	  condition/expession THEN
+[ELSIF 	  condition/expession THEN
 	statements_c1;
 	.............;]
 [ELSE 
