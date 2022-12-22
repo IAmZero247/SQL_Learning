@@ -1,72 +1,58 @@
 -----------------------===================-----------------------
--------------------------VARIABLE SCOPE--------------------------
+-----------------------------IF ELSE-----------------------------
 -----------------------===================-----------------------
-set serveroutput on;
-set autoprint on; ----> to print bindvariable 
 
-1. Increases performance , Created in host env , Scope in work sheet
-2. Syntax 
+Syntax:
 
-   variable varname type
-
-   variable var_t1 varchar2(30);
-   variable var_number NUMBER;
-   
-   
-   DATE/TIMESTAMP are not supported
-       variable var_date DATE; --> ERROR
-   assignment only inside begin end block
-   cant assign preci to bind ariable type
-
+IF condition/expession THEN 
+    statements_a1;
+	.............;
+[ELSEIF 	  condition/expession THEN
+	statements_b1;
+	.............;]
+[ELSEIF 	  condition/expession THEN
+	statements_c1;
+	.............;]
+[ELSE 
+    statements_def1;
+	.............;]	
+END IF;	
 -----------------------===================-----------------------
-set serveroutput on;
-set autoprint on;
 
-variable b_mybindvar1 varchar2(30);
-variable b_mybindvar2 NUMBER;
+
+SET SERVEROUTPUT ON;
+SET AUTOPRINT ON;
+
+
 
 DECLARE 
-v_myvariable varchar2(30);
+v_mynum NUMBER(3) :=111;
 BEGIN
- --Assignment here 
- :b_mybindvar1 := 'Hello SQL';
- :b_mybindvar2 := 100;
-v_myvariable := :b_mybindvar1;
---dbms_output.put_line(v_myvariable);
---dbms_output.put_line(:b_mybindvar1);
+
+IF v_mynum = 0 THEN
+DBMS_OUTPUT.PUT_LINE('Number is 0');
+ELSIF v_mynum < 10 THEN
+DBMS_OUTPUT.PUT_LINE('Number is between 0 and 10');
+ELSIF v_mynum < 100 THEN
+DBMS_OUTPUT.PUT_LINE('Number is between 10 and 100');
+ELSIF v_mynum < 1000 THEN
+DBMS_OUTPUT.PUT_LINE('Number is between 100 and 1000');
+ELSE
+    IF v_mynum IS NULL THEN
+      DBMS_OUTPUT.PUT_LINE('Number is null..');
+    ELSE
+      DBMS_OUTPUT.PUT_LINE('Number is equal or above 1000');
+    END IF;
+END IF;
 END;
 
 
-print b_mybindvar1;
-print b_mybindvar2;
-----------------------------------------------------------------
+
+
+-----------------------===================-----------------------
+
+Number is between 100 and 1000
+
 
 PL/SQL procedure successfully completed.
 
-B_MYBINDVAR1
----------
-Hello SQL
-
-B_MYBINDVAR2
----
-100
-B_MYBINDVAR1
----------
-Hello SQL
-
-/*------------------------BIND VARIABLES--------------------------
-NOTE: When you run a bind variable creation and SELECT statement 
-together, SQL Developer may return an error but when you execute 
-them separately, there will be no problem.
-----------------------------------------------------------------*/
-
-
-variable var_sql number;
-begin 
-  :var_sql := 100;
-end;
-
-select * from hr.employees  e where  e.employee_id > :var_sql;
-
-
-----------------------------------------------------------------
