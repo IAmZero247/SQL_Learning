@@ -1,0 +1,65 @@
+-----------------------====================-----------------------
+-----------------------       FOR LOOP     -----------------------
+-----------------------====================-----------------------
+EXIT Statement is optional
+
+Syntax:
+
+FOR i IN [REVERSE] 1..100 LOOP
+ statement1;
+ statement2;
+END LOOP; 
+
+-----------------------===================-----------------------
+
+Example Count Till 3 
+/////////////////////
+/************************************************************/
+SET SERVEROUTPUT ON;
+SET AUTOPRINT ON;
+
+
+
+DECLARE 
+BEGIN
+
+	FOR i IN REVERSE 1..3 LOOP
+	DBMS_OUTPUT.PUT_LINE('My counter is : ' || i);
+	END LOOP;
+
+END;
+
+/************************************************************/
+
+
+My counter is : 3
+My counter is : 2
+My counter is : 1
+
+
+PL/SQL procedure successfully completed.
+
+/************************************************************/
+SET SERVEROUTPUT ON;
+SET AUTOPRINT ON;
+
+
+
+DECLARE 
+BEGIN
+
+	FOR i IN  1..3 LOOP
+	DBMS_OUTPUT.PUT_LINE('My counter is : ' || i);
+	END LOOP;
+
+END;
+
+/************************************************************/
+
+My counter is : 1
+My counter is : 2
+My counter is : 3
+
+
+PL/SQL procedure successfully completed.
+-----------------------===================-----------------------

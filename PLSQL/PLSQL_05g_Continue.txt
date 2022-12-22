@@ -1,0 +1,215 @@
+-----------------------====================-----------------------
+----------------------- CONTINUE STATEMENT -----------------------
+-----------------------====================-----------------------
+
+
+Syntax: 
+  CONTINUE [labelName] [WHEN condition];
+
+-----------------------===================-----------------------
+
+Example1: Print Even Numbers
+/************************************************************/
+SET SERVEROUTPUT ON;
+SET AUTOPRINT ON;
+
+
+
+DECLARE 
+BEGIN
+
+	FOR i IN REVERSE 1..20 LOOP
+	CONTINUE WHEN MOD(i,2)=1;
+	DBMS_OUTPUT.PUT_LINE('Number is : ' || i);
+	END LOOP;
+
+END;
+
+/************************************************************/
+
+Number is : 20
+Number is : 18
+Number is : 16
+Number is : 14
+Number is : 12
+Number is : 10
+Number is : 8
+Number is : 6
+Number is : 4
+Number is : 2
+
+
+PL/SQL procedure successfully completed.
+
+/************************************************************/
+Example2: 
+/************************************************************/
+SET SERVEROUTPUT ON;
+SET AUTOPRINT ON;
+
+
+
+DECLARE
+ v_inner NUMBER := 1;
+BEGIN
+ FOR v_outer IN 1..10 LOOP
+  DBMS_OUTPUT.PUT_LINE('My outer value is : ' || v_outer );
+    v_inner := 1;
+    WHILE v_inner * v_outer < 15 LOOP
+      v_inner := v_inner + 1;
+      CONTINUE WHEN MOD(v_inner * v_outer,3) = 0; -- Factor of 3 is skipped
+      DBMS_OUTPUT.PUT_LINE('  My inner value is : ' || v_inner );
+    END LOOP;
+ END LOOP;
+END;
+
+/************************************************************/
+
+My outer value is : 1
+  My inner value is : 2
+  My inner value is : 4
+  My inner value is : 5
+  My inner value is : 7
+  My inner value is : 8
+  My inner value is : 10
+  My inner value is : 11
+  My inner value is : 13
+  My inner value is : 14
+My outer value is : 2
+  My inner value is : 2
+  My inner value is : 4
+  My inner value is : 5
+  My inner value is : 7
+  My inner value is : 8
+My outer value is : 3
+My outer value is : 4
+  My inner value is : 2
+  My inner value is : 4
+My outer value is : 5
+  My inner value is : 2
+My outer value is : 6
+My outer value is : 7
+  My inner value is : 2
+My outer value is : 8
+  My inner value is : 2
+My outer value is : 9
+My outer value is : 10
+  My inner value is : 2
+
+
+PL/SQL procedure successfully completed.
+/************************************************************/
+Example3: 
+/************************************************************/
+DECLARE
+ v_inner NUMBER := 1;
+BEGIN
+<<outer_loop>>
+ FOR v_outer IN 1..10 LOOP
+  DBMS_OUTPUT.PUT_LINE('My outer value is : ' || v_outer );
+    v_inner := 1;
+    <<inner_loop>>
+    LOOP
+      v_inner := v_inner + 1;
+      CONTINUE outer_loop WHEN v_inner = 10;
+      DBMS_OUTPUT.PUT_LINE('  My inner value is : ' || v_inner );
+    END LOOP inner_loop;
+ END LOOP outer_loop;
+end;
+/************************************************************/
+My outer value is : 1
+  My inner value is : 2
+  My inner value is : 3
+  My inner value is : 4
+  My inner value is : 5
+  My inner value is : 6
+  My inner value is : 7
+  My inner value is : 8
+  My inner value is : 9
+My outer value is : 2
+  My inner value is : 2
+  My inner value is : 3
+  My inner value is : 4
+  My inner value is : 5
+  My inner value is : 6
+  My inner value is : 7
+  My inner value is : 8
+  My inner value is : 9
+My outer value is : 3
+  My inner value is : 2
+  My inner value is : 3
+  My inner value is : 4
+  My inner value is : 5
+  My inner value is : 6
+  My inner value is : 7
+  My inner value is : 8
+  My inner value is : 9
+My outer value is : 4
+  My inner value is : 2
+  My inner value is : 3
+  My inner value is : 4
+  My inner value is : 5
+  My inner value is : 6
+  My inner value is : 7
+  My inner value is : 8
+  My inner value is : 9
+My outer value is : 5
+  My inner value is : 2
+  My inner value is : 3
+  My inner value is : 4
+  My inner value is : 5
+  My inner value is : 6
+  My inner value is : 7
+  My inner value is : 8
+  My inner value is : 9
+My outer value is : 6
+  My inner value is : 2
+  My inner value is : 3
+  My inner value is : 4
+  My inner value is : 5
+  My inner value is : 6
+  My inner value is : 7
+  My inner value is : 8
+  My inner value is : 9
+My outer value is : 7
+  My inner value is : 2
+  My inner value is : 3
+  My inner value is : 4
+  My inner value is : 5
+  My inner value is : 6
+  My inner value is : 7
+  My inner value is : 8
+  My inner value is : 9
+My outer value is : 8
+  My inner value is : 2
+  My inner value is : 3
+  My inner value is : 4
+  My inner value is : 5
+  My inner value is : 6
+  My inner value is : 7
+  My inner value is : 8
+  My inner value is : 9
+My outer value is : 9
+  My inner value is : 2
+  My inner value is : 3
+  My inner value is : 4
+  My inner value is : 5
+  My inner value is : 6
+  My inner value is : 7
+  My inner value is : 8
+  My inner value is : 9
+My outer value is : 10
+  My inner value is : 2
+  My inner value is : 3
+  My inner value is : 4
+  My inner value is : 5
+  My inner value is : 6
+  My inner value is : 7
+  My inner value is : 8
+  My inner value is : 9
+
+
+PL/SQL procedure successfully completed.
+
+
+-----------------------===================-----------------------
