@@ -1,0 +1,58 @@
+-----------------------===================-----------------------
+-----------------------------IF ELSE-----------------------------
+-----------------------===================-----------------------
+
+Syntax:
+
+IF condition/expession THEN 
+	statements_a1;
+	.............;
+[ELSIF 	  condition/expession THEN
+	statements_b1;
+	.............;]
+[ELSIF 	  condition/expession THEN
+	statements_c1;
+	.............;]
+[ELSE 
+	statements_def1;
+	.............;]	
+END IF;	
+-----------------------===================-----------------------
+
+
+SET SERVEROUTPUT ON;
+SET AUTOPRINT ON;
+
+
+
+DECLARE 
+v_mynum NUMBER(3) :=111;
+BEGIN
+
+	IF v_mynum = 0 THEN
+		DBMS_OUTPUT.PUT_LINE('Number is 0');
+	ELSIF v_mynum < 10 THEN
+		DBMS_OUTPUT.PUT_LINE('Number is between 0 and 10');
+	ELSIF v_mynum < 100 THEN
+		DBMS_OUTPUT.PUT_LINE('Number is between 10 and 100');
+	ELSIF v_mynum < 1000 THEN
+		DBMS_OUTPUT.PUT_LINE('Number is between 100 and 1000');
+	ELSE
+		IF v_mynum IS NULL THEN
+			DBMS_OUTPUT.PUT_LINE('Number is null..');
+		ELSE
+			DBMS_OUTPUT.PUT_LINE('Number is equal or above 1000');
+		END IF;
+	END IF;
+END;
+
+
+
+
+-----------------------===================-----------------------
+
+Number is between 100 and 1000
+
+
+PL/SQL procedure successfully completed.
+

@@ -1,0 +1,56 @@
+-----------------------====================-----------------------
+-----------------------BASIC LOOP[DO WHILE]-----------------------
+-----------------------====================-----------------------
+Behave like do while in other programming langague
+
+Syntax:
+
+LOOP
+ statement1;
+ statement2;
+ EXIT [WHEN conditions];            <---- You can use EXIT with IF
+END LOOP; 
+
+-----------------------===================-----------------------
+
+Example Count Till 10 
+/////////////////////
+/************************************************************/
+SET SERVEROUTPUT ON;
+SET AUTOPRINT ON;
+
+
+
+DECLARE 
+v_counter NUMBER(2) :=1;
+BEGIN
+	LOOP
+		DBMS_OUTPUT.PUT_LINE('My counter is : '|| v_counter);
+		v_counter := v_counter + 1;
+		
+		  IF v_counter = 7 THEN
+		  DBMS_OUTPUT.PUT_LINE('Now I reached : '|| v_counter);
+		  EXIT;
+		  END IF;
+
+	EXIT WHEN v_counter > 10;
+	END LOOP;
+END;
+
+/************************************************************/
+
+
+My counter is : 1
+My counter is : 2
+My counter is : 3
+My counter is : 4
+My counter is : 5
+My counter is : 6
+My counter is : 7
+My counter is : 8
+My counter is : 9
+My counter is : 10
+
+
+PL/SQL procedure successfully completed.
+-----------------------===================-----------------------

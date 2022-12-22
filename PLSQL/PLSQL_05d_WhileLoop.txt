@@ -1,0 +1,50 @@
+-----------------------====================-----------------------
+-----------------------     WHILE  LOOP    -----------------------
+-----------------------====================-----------------------
+EXIT Statement is optional
+
+Syntax:
+
+WHILE condition LOOP
+ statement1;
+ statement2;
+ EXIT [WHEN conditions];
+END LOOP; 
+
+-----------------------===================-----------------------
+
+Example Count Till 10 
+/////////////////////
+/************************************************************/
+SET SERVEROUTPUT ON;
+SET AUTOPRINT ON;
+
+
+
+DECLARE 
+v_counter NUMBER(2) :=1;
+BEGIN
+	WHILE v_counter <= 10 LOOP
+    dbms_output.put_line('My counter is : '|| v_counter);
+    v_counter := v_counter + 1;
+	-- EXIT WHEN v_counter > 3;
+	END LOOP;
+END;
+
+/************************************************************/
+
+
+My counter is : 1
+My counter is : 2
+My counter is : 3
+My counter is : 4
+My counter is : 5
+My counter is : 6
+My counter is : 7
+My counter is : 8
+My counter is : 9
+My counter is : 10
+
+
+PL/SQL procedure successfully completed.
+-----------------------===================-----------------------
