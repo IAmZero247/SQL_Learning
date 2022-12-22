@@ -6,7 +6,7 @@ Exiting Inner loop will not exit Outer loop
 In case if we want to exit Outer loop from Inner loop we need to use Labels
 
 Syntax: 
-  EXIT [labelName] When condition;
+  EXIT [labelName] WHEN condition;
 
 -----------------------===================-----------------------
 
