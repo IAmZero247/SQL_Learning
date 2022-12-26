@@ -1,19 +1,21 @@
 -----------------------====================-----------------------
------------------------       FOR LOOP     -----------------------
+-----------------------   GOTO STATEMENT   -----------------------
 -----------------------====================-----------------------
-EXIT Statement is optional
+
 
 Syntax:
 
-FOR i IN [REVERSE] 1..100 LOOP
- statement1;
- statement2;
-END LOOP; 
+	GOTO labelname
+
+
+Cant move control into a Control Struture (If/Case/Loop)
+Cant move into a inner block from an outer block
+Cant move out of a subprogram (like function/procedure)
+in or out of an exception block (move from inner exection to outer exception)
 
 -----------------------===================-----------------------
 
-Example Count Till 3 
-/////////////////////
+Example 1: Is prime
 /************************************************************/
 SET SERVEROUTPUT ON;
 SET AUTOPRINT ON;
@@ -21,24 +23,35 @@ SET AUTOPRINT ON;
 
 
 DECLARE 
+v_searched_number NUMBER  := 997;
+v_is_prime BOOLEAN :=true;
 BEGIN
 
-	FOR i IN REVERSE 1..3 LOOP
-	DBMS_OUTPUT.PUT_LINE('My counter is : ' || i);
+	FOR i IN  2..v_searched_number-1 LOOP
+		IF v_searched_number mod i =0 THEN
+		DBMS_OUTPUT.PUT_LINE(v_searched_number|| ' is not a prime number..');
+        v_is_prime := false;
+        GOTO end_point;
+		END IF;
 	END LOOP;
-
+	IF v_is_prime THEN 
+		DBMS_OUTPUT.PUT_LINE(v_searched_number|| ' is a prime number..');
+	END IF;
+	<<end_point>>
+    DBMS_OUTPUT.PUT_LINE('Check complete..');
 END;
 
 /************************************************************/
 
 
-My counter is : 3
-My counter is : 2
-My counter is : 1
+997 is a prime number..
+Check complete..
 
 
 PL/SQL procedure successfully completed.
 
+/************************************************************/
+Example 1: Is prime Without Forloop
 /************************************************************/
 SET SERVEROUTPUT ON;
 SET AUTOPRINT ON;
@@ -46,20 +59,33 @@ SET AUTOPRINT ON;
 
 
 DECLARE 
+v_searched_number NUMBER  := 22;
+v_is_prime BOOLEAN := true;
+v_x NUMBER := 2;
 BEGIN
 
-	FOR i IN  1..3 LOOP
-	DBMS_OUTPUT.PUT_LINE('My counter is : ' || i);
-	END LOOP;
-
+	<<start_point>>
+		IF v_searched_number mod v_x =0 THEN
+		DBMS_OUTPUT.PUT_LINE(v_searched_number|| ' is not a prime number..');
+        v_is_prime := false;
+        GOTO end_point;
+		END IF;
+	    
+        v_x := v_x+1;
+		IF v_x = v_searched_number THEN
+		GOTO prime_point;
+		END IF;
+	    GOTO start_point;	
+	<<prime_point>>
+		IF v_is_prime THEN 
+			DBMS_OUTPUT.PUT_LINE(v_searched_number|| ' is a prime number..');
+		END IF;
+	<<end_point>>
+		DBMS_OUTPUT.PUT_LINE('Check complete..');
 END;
-
-/************************************************************/
-
-My counter is : 1
-My counter is : 2
-My counter is : 3
+-----------------------===================-----------------------
+22 is not a prime number..
+Check complete..
 
 
 PL/SQL procedure successfully completed.
------------------------===================-----------------------
