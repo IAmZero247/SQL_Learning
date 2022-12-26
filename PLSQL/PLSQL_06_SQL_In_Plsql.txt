@@ -37,7 +37,7 @@ The salary of Mozhe Atkinson is : 2800
 PL/SQL procedure successfully completed.
 
 /************************************************************/
-Example 1: DQL Example 2
+Example 1: DQL Example 2 - sysdate function value into variable
 /************************************************************/
 SET SERVEROUTPUT ON;
 SET AUTOPRINT ON;
@@ -61,7 +61,7 @@ The salary of Mozhe Atkinson is : 25-DEC-22 21:11:09
 
 PL/SQL procedure successfully completed.
 /************************************************************/
-Example 1: DML -Insert Update And Delete Example 1
+Example 1: DML -Insert Update And Delete 
 /************************************************************/
 CREATE TABLE employees_copy AS SELECT * FROM employees;
 
@@ -88,7 +88,7 @@ BEGIN
 END; 
 
 /************************************************************/
-Example 1: Sequences Example 1
+Example 1: Sequences 
 /************************************************************/
 /******************** Creating a Sequence *******************/
 CREATE SEQUENCE employee_id_seq 
